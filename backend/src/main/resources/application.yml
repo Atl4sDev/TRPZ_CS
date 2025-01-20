@@ -1,0 +1,32 @@
+spring.datasource:
+  url: ${NMS_DB_URL}
+  username: ${NMS_DB_USERNAME}
+  password: ${NMS_DB_PASSWORD}
+  driver-class-name: org.postgresql.Driver
+
+spring.jpa:
+  hibernate.ddl-auto: update
+  show-sql: true
+  properties:
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+
+nms.security:
+  jwt:
+    token-expiration-millis: 604800000 # 1 week
+    token-secret: 11c023y2012nm19c071mycy0m80cm49809ib6v345v4
+  admin:
+    username: ${NMS_ADMIN_USERNAME}
+    password: ${NMS_ADMIN_PASSWORD}
+    email: ${NMS_ADMIN_EMAIL}
+
+logging:
+  level:
+    root: WARN
+    com:
+      example:
+        nms: TRACE
+
+server:
+  port: 8081
+  adress: 0.0.0.0
